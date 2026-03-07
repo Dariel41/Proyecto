@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org" 
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"> 
+    <head th:fragment="head"> 
+        <title>Cafeteria</title> 
+        <meta charset="UTF-8"/> 
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/> 
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/> 
+        <script th:src="@{/js/rutinas.js}"></script> 
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script> 
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script> 
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script> 
+    </head>
+    <body>
+
+        <!-- ================== TABS ================== -->
+        <section th:fragment="tabs">
+
+            <div class="container mt-4">
+
+                <ul class="nav nav-tabs">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Consultas</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Información</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soporte</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================== TARJETAS ================== -->
+        <section th:fragment="tarjetas">
+
+            <div class="container mt-4">
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <div class="card shadow">
+
+                            <div class="card-body text-center">
+
+                                <i class="fa-solid fa-comments fa-3x text-primary"></i>
+
+                                <h5 class="card-title mt-3">Consultas</h5>
+
+                                <p class="card-text">
+                                    Aquí puedes revisar todas las consultas registradas.
+                                </p>
+
+                                <a th:href="@{/consultas/listado}" class="btn btn-primary">
+                                    Ver Consultas
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-md-4">
+
+                        <div class="card shadow">
+
+                            <div class="card-body text-center">
+
+                                <i class="fa-solid fa-box fa-3x text-success"></i>
+
+                                <h5 class="card-title mt-3">Productos</h5>
+
+                                <p class="card-text">
+                                    Administrar los productos disponibles.
+                                </p>
+
+                                <a th:href="@{/producto/listado}" class="btn btn-success">
+                                    Ver Productos
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-md-4">
+
+                        <div class="card shadow">
+
+                            <div class="card-body text-center">
+
+                                <i class="fa-solid fa-tags fa-3x text-warning"></i>
+
+                                <h5 class="card-title mt-3">Categorías</h5>
+
+                                <p class="card-text">
+                                    Administrar categorías del sistema.
+                                </p>
+
+                                <a th:href="@{/categoria/listado}" class="btn btn-warning">
+                                    Ver Categorías
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org">
+
+        <head>
+            <title>Cafetería - Inicio</title>
+            <link rel="stylesheet" th:href="@{/css/estilos.css}">
+        </head>
+
+        <body>
+
+            <header>
+                <div class="logo">☕ Cafetería</div>
+            </header>
+
+            <!-- MENÚ LATERAL -->
+
+            <aside>
+
+                <h3>Menú</h3>
+
+                <ul>
+
+                    <li>
+                        <a th:href="@{/}">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a th:href="@{/producto/listado}">Productos</a>
+                    </li>
+
+                    <li>
+                        <a th:href="@{/ventas/listado}">Ventas</a>
+                    </li>
+
+                    <li>
+                        <a th:href="@{/perfil}">Perfil</a>
+                    </li>
+
+                    <li>
+                        <a th:href="@{/logout}">Cerrar sesión</a>
+                    </li>
+
+                </ul>
+
+            </aside>
+
+            <!-- CONTENIDO PRINCIPAL -->
+
+            <section>
+
+                <h2>Menú de la Cafetería</h2>
+
+                <table border="1">
+
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                    </tr>
+
+                    <tr th:each="p : ${productos}">
+                        <td th:text="${p.descripcion}"></td>
+                        <td th:text="${p.precio}"></td>
+                    </tr>
+
+                </table>
+
+            </section>
+
+        </body>
+
+    </html>

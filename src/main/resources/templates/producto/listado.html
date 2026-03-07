@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head>
+
+        <link rel="stylesheet" th:href="@{/css/estilos.css}">
+
+            <title>Productos</title>
+
+    </head>
+
+    <body>
+
+        <header>
+
+            <nav>
+
+                <div class="logo">☕ Cafetería</div>
+
+                <div>
+
+                    <a th:href="@{/}">Inicio</a>
+                    <a th:href="@{/producto/listado}">Productos</a>
+
+                    <a sec:authorize="hasRole('ADMIN')" th:href="@{/ventas}">
+                        Ventas
+                    </a>
+
+                    <a th:href="@{/logout}">
+                        Cerrar sesión
+                    </a>
+
+                </div>
+
+            </nav>
+
+        </header>
+
+        <section>
+
+            <h2>Menú de la Cafetería</h2>
+
+            <table border="1">
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Existencias</th>
+                    <th>Acciones</th>
+
+                </tr>
+
+                <tr th:each="p : ${productos}">
+
+                    <td th:text="${p.idProducto}"></td>
+
+                    <td>
+                        <img th:src="${p.imagen}" width="80">
+                    </td>
+
+                    <td th:text="${p.descripcion}"></td>
+
+                    <td th:text="${p.precio}"></td>
+
+                    <td th:text="${p.existencias}"></td>
+
+                    <td>
+
+                        <!-- CLIENTE COMPRA -->
+
+                        <a sec:authorize="hasRole('USER')"
+                           th:href="@{/ventas/comprar/}+${p.idProducto}">
+                            Comprar
+                        </a>
+
+                        <!-- ADMIN EDITA -->
+
+                        <a sec:authorize="hasRole('ADMIN')"
+                           th:href="@{/producto/modificar/}+${p.idProducto}">
+                            Editar
+                        </a>
+
+                        <a sec:authorize="hasRole('ADMIN')"
+                           th:href="@{/producto/eliminar/}+${p.idProducto}">
+                            Eliminar
+                        </a>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+            <!-- BOTON NUEVO SOLO ADMIN -->
+
+            <div sec:authorize="hasRole('ADMIN')">
+
+                <br>
+
+                    <a th:href="@{/producto/nuevo}">
+                        Agregar Producto
+                    </a>
+
+            </div>
+
+        </section>
+
+    </body>
+
+</html>
