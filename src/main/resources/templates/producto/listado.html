@@ -6,7 +6,6 @@
     <head>
 
         <link rel="stylesheet" th:href="@{/css/estilos.css}">
-
             <title>Productos</title>
 
     </head>
@@ -42,7 +41,10 @@
 
             <h2>Menú de la Cafetería</h2>
 
-            <table border="1">
+            <!-- BOTON VOLVER -->
+            <a th:href="@{/}" class="btn-volver">← Volver al inicio</a>
+
+            <table class="tabla-productos">
 
                 <tr>
 
@@ -60,7 +62,7 @@
                     <td th:text="${p.idProducto}"></td>
 
                     <td>
-                        <img th:src="${p.imagen}" width="80">
+                        <img th:src="${p.imagen}">
                     </td>
 
                     <td th:text="${p.descripcion}"></td>
@@ -102,7 +104,7 @@
 
                 <br>
 
-                    <a th:href="@{/producto/nuevo}">
+                    <a th:href="@{/producto/nuevo}" class="btn-volver">
                         Agregar Producto
                     </a>
 

@@ -2,8 +2,8 @@
 
 body{
     margin:0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color:#f3ede7; /* crema */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#f3ede7;
     color:#3e2723;
 }
 
@@ -15,7 +15,7 @@ header{
     left:0;
     width:100%;
     height:90px;
-    background:#4e342e; /* café oscuro */
+    background:#4e342e;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -32,29 +32,18 @@ header{
     font-family:cursive;
 }
 
-/* ===== NAVBAR ===== */
+/* ===== LINKS HEADER ===== */
 
-.nav-menu{
-    display:flex;
-    list-style:none;
-    gap:20px;
-}
-
-.nav-link{
-    text-decoration:none;
+header a{
     color:white;
-    font-size:18px;
+    text-decoration:none;
+    margin-left:15px;
+    font-size:16px;
+    font-weight:bold;
 }
 
-.menu-item{
-    padding:8px 14px;
-    background:#6d4c41; /* café medio */
-    border-radius:8px;
-    transition:0.3s;
-}
-
-.menu-item:hover{
-    background:#a1887f; /* café claro */
+header a:hover{
+    text-decoration:underline;
 }
 
 /* ===== ASIDE ===== */
@@ -103,16 +92,22 @@ h1{
     color:#4e342e;
 }
 
-/* ===== PRODUCTOS ===== */
+/* ===== PRODUCTOS TARJETAS ===== */
+
+.productos-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    margin-top:20px;
+}
 
 .producto-card{
-    display:inline-block;
     width:220px;
     background:white;
-    margin:15px;
     padding:15px;
-    border-radius:12px;
+    border-radius:10%;
     box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    text-align:center;
     transition:0.3s;
 }
 
@@ -122,16 +117,20 @@ h1{
 
 .producto-card img{
     width:100%;
-    border-radius:10px;
+    height:160px;
+    object-fit:cover;
+    border-radius:10%;
 }
 
 .producto-card h3{
-    margin:10px 0;
+    margin-top:10px;
+    font-size:18px;
 }
 
 .producto-card p{
-    color:#6d4c41;
+    font-size:16px;
     font-weight:bold;
+    color:#6d4c41;
 }
 
 /* ===== LOGIN ===== */
@@ -147,21 +146,16 @@ h1{
     background-position:center;
 }
 
-/* ===== TARJETA LOGIN ===== */
-
 .login-card{
-    background:rgba(255,255,255,0.92);
-    padding:40px;
+    background:white;
+    padding:45px;
     border-radius:15px;
-    width:340px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.4);
-    text-align:center;
+    width:360px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
 }
 
-/* ===== TITULO LOGIN ===== */
-
 .titulo{
-    color:#4e342e;
+    color:#ffffff;
     margin-bottom:20px;
 }
 
@@ -169,7 +163,6 @@ h1{
 
 .campo{
     margin-bottom:18px;
-    text-align:left;
 }
 
 .campo label{
@@ -196,17 +189,104 @@ h1{
     border-radius:8px;
     font-size:16px;
     cursor:pointer;
-    transition:0.3s;
 }
 
 .btn-login:hover{
     background:#4e342e;
 }
 
-/* ===== TEXTO INFERIOR ===== */
+/* ===== MENU LATERAL ===== */
 
-.info{
-    margin-top:15px;
-    font-size:12px;
-    color:#777;
+aside ul{
+    list-style:none;
+    padding:0;
+    margin-top:20px;
+}
+
+aside ul li{
+    margin-bottom:15px;
+}
+
+aside ul li a{
+    display:block;
+    width:160px;
+    background:#6d4c41;
+    color:white;
+    text-decoration:none;
+    padding:8px;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    text-align:center;
+    transition:0.3s;
+}
+
+aside ul li a:hover{
+    background:#4e342e;
+    transform:scale(1.05);
+}
+
+/* ===== TABLA PRODUCTOS ===== */
+
+table{
+    border-collapse:collapse;
+    width:75%;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+}
+
+th{
+    background:#6d4c41;
+    color:white;
+    padding:12px;
+    text-align:center;
+}
+
+td{
+    padding:10px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f3ede7;
+}
+
+td img{
+    width:60px;
+    border-radius:8px;
+}
+
+/* ===== BOTON COMPRAR ===== */
+
+td a{
+    background:#6d4c41;
+    color:white;
+    padding:6px 12px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:14px;
+}
+
+td a:hover{
+    background:#4e342e;
+}
+
+/* ===== BOTON VOLVER ===== */
+
+.btn-volver{
+    display:inline-block;
+    margin-bottom:15px;
+    background:#6d4c41;
+    color:white;
+    padding:8px 15px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn-volver:hover{
+    background:#4e342e;
 }

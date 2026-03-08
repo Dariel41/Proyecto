@@ -13,7 +13,7 @@
         <body>
 
             <header>
-                <div class="logo">☕ Cafetería</div>
+                <div class="logo">Tu Tienda Online</div>
             </header>
 
             <!-- MENÚ LATERAL -->
@@ -54,19 +54,19 @@
 
                 <h2>Menú de la Cafetería</h2>
 
-                <table border="1">
+                <div class="productos-container">
 
-                    <tr>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                    </tr>
+                    <div class="producto-card" th:each="p : ${productos}">
 
-                    <tr th:each="p : ${productos}">
-                        <td th:text="${p.descripcion}"></td>
-                        <td th:text="${p.precio}"></td>
-                    </tr>
+                        <img th:src="${p.imagen}" alt="Producto">
 
-                </table>
+                            <h3 th:text="${p.descripcion}"></h3>
+
+                            <p th:text="'₡ ' + ${p.precio}"></p>
+
+                    </div>
+
+                </div>
 
             </section>
 

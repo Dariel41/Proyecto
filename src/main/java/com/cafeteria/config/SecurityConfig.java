@@ -31,7 +31,7 @@ public class SecurityConfig {
                 )
                 .formLogin(form -> form
                 .loginPage("/login")
-                .defaultSuccessUrl("/producto/listado", true)
+                .defaultSuccessUrl("/", true)
                 .permitAll()
                 )
                 .logout(logout -> logout
